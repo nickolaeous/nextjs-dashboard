@@ -22,6 +22,7 @@ const FormSchema = z.object({
 const CreateInvoice = FormSchema.omit({id: true, date: true});
 const UpdateInvoice = FormSchema.omit({id: true, date: true});
 
+// This is temporary
 export type State = {
     errors?: {
         customerId?: string[];
@@ -98,9 +99,8 @@ export async function updateInvoice(id: string, formData: FormData) {
 }
 
 export async function deleteInvoice(id: string) {
-    throw new Error('Failed to Delete Invoice');
-
-    // Unreachable code block
+    // throw new Error('Failed to Delete Invoice');
+    
     try {
         await sql`DELETE
                   FROM invoices
